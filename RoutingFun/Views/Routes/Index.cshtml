@@ -1,0 +1,9 @@
+﻿
+<h2>Data</h2>
+
+<ul style="list-style-type:none;">
+    @foreach (var pair in ViewBag.Pairs)
+    {
+        <li><b>@pair.Key:</b> @pair.Value</li>
+    }
+</ul>
