@@ -51,11 +51,6 @@ namespace RoutingFun
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
-
-                //endpoints.MapControllerRoute(
-                //    name: "blog",
-                //    pattern: "{year}/{month}/{day}/{category?}/{blob}",
-                //    new { controller = "Routes" });
             });
         }
     }

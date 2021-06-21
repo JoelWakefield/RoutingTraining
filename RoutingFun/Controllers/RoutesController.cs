@@ -13,20 +13,6 @@ namespace RoutingFun.Controllers
             return View();
         }
 
-        //public IActionResult Data(List<string> args)
-        //{
-        //    List<KeyValuePair<string, string>> pairs = new List<KeyValuePair<string, string>>();
-
-        //    foreach (var arg in args)
-        //    {
-        //        pairs.Add(new KeyValuePair<string, string>(nameof(arg), arg));
-        //    }
-
-        //    ViewBag.Pairs = pairs;
-
-        //    return View("Index");
-        //}
-
         [Route("{year}/{month}/{day}/{blob}")]
         public IActionResult Blog(string year, string month, string day, string blob)
         {
@@ -114,6 +100,11 @@ namespace RoutingFun.Controllers
         [Route("{product}/dp/{code}")]
         public IActionResult Shop(string product, string code, string pd_rd_w, string pf_rd_p, string pf_rd_r, string pd_rd_r, string pd_rd_wg, string pd_rd_i, string psc, string ref_)
         {
+            ////  Also a way of getting data
+            //ViewBag.Path = Request.Path.ToString();
+            //ViewBag.RouteValues = Request.RouteValues;
+            //ViewBag.Query = Request.Query;
+
             List<KeyValuePair<string, string>> pairs = new List<KeyValuePair<string, string>>() {
                 new KeyValuePair<string, string>("product", product),
                 new KeyValuePair<string, string>("code", code),
@@ -140,14 +131,6 @@ namespace RoutingFun.Controllers
                 new KeyValuePair<string, string>("mode", mode),
                 new KeyValuePair<string, string>("section", section)
             };
-
-            //Dictionary<string, string> pairs = new Dictionary<string, string>()
-            //{
-            //    { "tool", tool },
-            //    {"mode", mode },
-            //    { "section", section}
-            //};
-
 
             ViewBag.Pairs = pairs;
 
